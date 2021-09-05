@@ -1,0 +1,31 @@
+<view class="navBar">
+  <scroll-view class="scroll-view" scroll-x="true">
+    <view class="scroll-view-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="switchTab" hover-class="hover-class">推荐</view>
+    <view class="scroll-view-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="switchTab" hover-class="hover-class">热门</view>
+    <view class="scroll-view-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="switchTab" hover-class="hover-class">关注</view>
+    <view class="scroll-view-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="switchTab" hover-class="hover-class">上班摸鱼</view>
+    <view class="scroll-view-item {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="switchTab" hover-class="hover-class">树洞一下</view>
+    <view class="scroll-view-item {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="switchTab" hover-class="hover-class">内推招聘</view>
+  </scroll-view>
+</view>
+
+<swiper class="swiper-box" current="{{currentTab}}" bindchange="swiperChange">
+  <swiper-item>
+    <text>推荐</text>
+  </swiper-item>
+  <swiper-item>
+    <text>热门</text>
+  </swiper-item>
+  <swiper-item>
+    <text>关注</text>
+  </swiper-item>
+  <swiper-item>
+    <text>上班摸鱼</text>
+  </swiper-item>
+  <swiper-item>
+    <text>树洞一下</text>
+  </swiper-item>
+  <swiper-item>
+    <text>内推招聘</text>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,7 @@
+<view class="topBar">
+  <navigator url="../search/search">
+    <view class="searchBar"><icon class="search" type="search" color="#929292" size="20"></icon> 搜索掘金</view>
+  </navigator>
+</view>
+<image class="banner" src="/img/sign_banner1.png" bindtap="toLottery" />
+<card tt:for="{{articles}}" articleTitle="{{item.article_info.title}}" briefContent="{{item.article_info.brief_content}}" coverImage="{{item.article_info.cover_image}}" firstCategoryName="{{item.category_info.first_category_name}}" commentCount="{{item.article_info.comment_count}}" diggCount="{{item.article_info.digg_count}}" timeAgo="{{item.article_info.time_ago}}" userName="{{item.author_user_info.user_name}}" bindtap="toArticle" data-index="{{index}}"> </card>

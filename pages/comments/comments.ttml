@@ -1,0 +1,10 @@
+<comment class="starter" avatarImage="{{userInfo.avatar_large}}" userName="{{userInfo.user_name}}" jobTitle="{{userInfo.job_title}}" company="{{userInfo.company}}" timeAgo="{{commentInfo.time_ago}}" content="{{commentInfo.comment_content}}" isReply=""></comment>
+<view class="count">
+  <view class="replyCount">{{replys.length}} 回复</view>
+  <view class="split"></view>
+  <view class="diggCount">{{commentInfo.digg_count}} 赞</view>
+</view>
+<comment class="reply" tt:for="{{replys}}" tt:for-index="id" tt:for-item="reply" avatarImage="{{reply.user_info.avatar_large}}" userName="{{reply.user_info.user_name}}" jobTitle="{{reply.user_info.job_title}}" company="{{reply.user_info.company}}" timeAgo="{{reply.reply_info.time_ago}}" content="回复：{{reply.reply_info.reply_content}}" diggCount="{{reply.reply_info.digg_count}}" isReply="true"></comment>
+<view class="footer">
+  <input type="text" placeholder="回复{{userInfo.user_name}}：" adjust-position />
+</view>
