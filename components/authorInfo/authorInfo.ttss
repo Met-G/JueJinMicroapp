@@ -1,0 +1,38 @@
+.authorInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    height: 130rpx;
+    width: 750rpx;
+    padding: 28rpx;
+}
+
+image {
+    flex: 0 0 auto;
+    width: 76rpx;
+    height: 76rpx;
+    margin-right: 24rpx;
+    border-radius: 50%;
+}
+
+.containor {
+    flex: 1 1 auto;
+    width: 420rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 28rpx;
+    margin-bottom: 4rpx;
+}
+
+.intro {
+    width: 420rpx;
+    font-size: 24rpx;
+    color: #868f9b;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

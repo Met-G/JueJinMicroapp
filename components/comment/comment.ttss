@@ -1,0 +1,92 @@
+.comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    width: 750rpx;
+    padding: 28rpx;
+    padding-bottom: 24rpx;
+    border-bottom: 2rpx solid #ececec
+}
+
+.user {
+    display: flex;
+}
+
+.avatarImage {
+    flex: 0 0 auto;
+    align-self: start;
+    width: 76rpx;
+    height: 76rpx;
+    margin-right: 24rpx;
+    border-radius: 50%;
+}
+
+.container {
+    width: 580rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    color: #025eb3;
+    font-size: 28rpx;
+    margin-bottom: 4rpx;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    color: #868f9b;
+}
+
+.jobTitle, .company, .timeAgo {
+    white-space: nowrap;
+    font-weight: lighter;
+    max-width: 160rpx;
+    margin-right: 8rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.action {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 180rpx;
+    height: 40rpx;
+}
+
+.icon {
+    width: 32rpx;
+    height: 100%;
+}
+
+.diggCount {
+    font-size: 28rpx;
+    width: 60rpx;
+    margin-left: 8rpx;
+    color: #868f9b;
+}
+
+.content {
+    font-size: 28rpx;
+    margin-top: 8rpx;
+    line-height: 48rpx;
+}
+
+.replys {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 8rpx;
+    padding: 10rpx 20rpx;
+    background-color: #f6f7f9;
+    font-size: 28rpx;
+    line-height: 48rpx;
+}
+
+.replyer {
+    color: #025eb3;
+}

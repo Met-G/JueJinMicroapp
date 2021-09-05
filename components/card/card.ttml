@@ -1,0 +1,23 @@
+<view class="card" >
+  <view class="title">{{articleTitle}}</view>
+  <view class="contentBox">
+    <view class="writing">
+      <view class="info">
+        <view class="author">{{userName}}</view>
+        <view class="split"></view>
+        <view class="time">{{timeAgo}}</view>
+      </view>
+      <view class="container">{{briefContent}}</view>
+    </view>
+    <image tt:if="{{coverImage}}" class="img" src="{{coverImage}}" mode="aspectFill" />
+  </view>
+  <view class="footer">
+    <view class="action">
+      <image src="/img/liked.png" mode="aspectFit" class="icon" />
+      <span>{{diggCount}}</span>
+      <image src="/img/comment.png" mode="aspectFit" class="icon"/>
+      <span>{{commentCount}} </span>
+    </view>
+    <view class="tag">{{secondCategoryName}}</view>
+  </view>
+</view>

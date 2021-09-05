@@ -1,0 +1,30 @@
+<view class="comment">
+  <image src="{{avatarImage}}" class="avatarImage" />
+  <view class="container">
+    <view class="user">
+      <view class="info">
+        <view class="name">{{userName}}</view>
+        <view class="description">
+          <view class="jobTitle" tt:if="{{jobTitle}}">{{jobTitle}}</view>
+          <view class="company" tt:if="{{jobTitle&&company}}"> @ {{company}}</view>
+          <view class="company" tt:elif="{{company}}">{{company}}</view>
+          <view class="timeAgo" tt:if="{{jobTitle||company}}"> · {{timeAgo}}</view>
+          <view class="timeAgo" tt:else>{{timeAgo}}</view>
+        </view>
+      </view>
+      <view class="action" tt:if="{{isReply}}">
+        <image src="/img/liked.png" mode="aspectFit" class="icon" />
+        <span class="diggCount">{{diggCount}}</span>
+        <image src="/img/comment.png" mode="aspectFit" class="icon" />
+      </view>
+    </view>
+    <view class="content">
+      {{content}}
+    </view>
+    <view class="replys" tt:if="{{reply[0]}}">
+      <view class="replyItem" tt:for="{{reply}}">
+      <span class="replyer">{{item.user_info.user_name}}</span>
+       <span>:{{item.reply_info.reply_content}}</span></view>
+    </view>
+  </view>
+</view>
