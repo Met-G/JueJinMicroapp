@@ -7,9 +7,9 @@ Page({
   },
 
   toArticle(e) {
-    let articleId = this.data.articles[e.target.dataset.index].article_id
+    let articleID = this.data.articles[e.target.dataset.index].article_id
     tt.navigateTo({
-      url: '../article/article?articleId=' + articleId
+      url: '../article/article?articleID=' + articleID
     });
   },
 
