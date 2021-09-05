@@ -1,0 +1,62 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/article/article",
+    "pages/hotspot/hotspot",
+    "pages/found/found",
+    "pages/book/book",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/message/message",
+    "pages/search/search",
+    "pages/sign/sign",
+    "pages/comments/comments",
+    "pages/lottery/lottery",
+    "pages/gain/gain",
+    "pages/rule/rule"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#0D85FF",
+    "navigationBarTitleText": "掘金",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#abb4bf",
+    "selectedColor": "#3281ff",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/home_normal.png",
+        "selectedIconPath": "img/home.png"
+      },
+      {
+        "pagePath": "pages/hotspot/hotspot",
+        "text": "沸点",
+        "iconPath": "img/hotspot_normal.png",
+        "selectedIconPath": "img/hotspot.png"
+      },
+      {
+        "pagePath": "pages/found/found",
+        "text": "发现",
+        "iconPath": "img/found_normal.png",
+        "selectedIconPath": "img/found.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "小册",
+        "iconPath": "img/book_normal.png",
+        "selectedIconPath": "img/book.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我",
+        "iconPath": "img/mine_normal.png",
+        "selectedIconPath": "img/mine.png"
+      }
+    ]
+  }
+}
