@@ -1,0 +1,15 @@
+<view class="navBar">
+  <view class="firstCategory {{currentTab==index ? 'on' : ''}}" tt:for="{{categories}}" bindtap="switchTab" data-id="{{index}}">{{item.category_name}}</view>
+</view>
+
+<swiper class="swiper-box" current="{{currentTab}}" bindchange="swiperChange">
+  <swiper-item class="feed" tt:for="{{feed}}" tt:for-index="firstId">
+    <scroll-view class="subNavBar" tt:if="{{categories[firstId].children}}">
+      <view class="secondCategory {{currentCategory==currentTab?'selected':''}}" bindtap="switchCategory" data-second-id="{{firstId}}">全部</view>
+      <view class="secondCategory {{currentCategory==secondCategory.category_id?'selected':''}}" tt:for="{{categories[firstId].children}}" tt:for-index="secondId" tt:for-item="secondCategory" bindtap="switchCategory" data-second-id="{{secondCategory.category_id}}">{{secondCategory.category_name}}</view>
+    </scroll-view>
+    <scroll-view scroll-y="true" class="scroll" id="{{firstId==0?'recommend':''}}">
+      <card tt:for="{{feed[firstId]}}" tt:for-index="id" tt:for-item="article" articleTitle="{{article.article_info.title}}" briefContent="{{article.article_info.brief_content}}" coverImage="{{article.article_info.cover_image}}" secondCategoryName="{{article.category_info.second_category_name}}" commentCount="{{article.article_info.comment_count}}" diggCount="{{article.article_info.digg_count}}" timeAgo="{{article.article_info.time_ago}}" userName="{{article.author_user_info.user_name}}" bindtap="toArticle" data-id="{{id}}"> </card>
+    </scroll-view>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,78 @@
+.topBar {
+    position: fixed;
+    top: 0;
+    height: 80rpx;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 99;
+}
+
+.topBar image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 20rpx 30rpx;
+}
+
+.search {
+    margin-left: 20rpx;
+    margin-right: 10rpx;
+}
+
+.searchBar {
+    display: flex;
+    flex-grow: 2;
+    align-items: center;
+    color: #000;
+    background-color: #eeeeee;
+    font-size: 12pt;
+    height: 60rpx;
+    margin: 10rpx 0;
+    border-radius: 6rpx;
+}
+
+input::placeholder {
+    color: #bac1c7;
+}
+
+#sou {
+    line-height: 80rpx;
+    color: #0D85FF;
+    font-size: 13pt;
+    margin: 0 30rpx;
+}
+
+.swiperTab {
+    position: fixed;
+    top: 80rpx;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 80rpx;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4rpx 4rpx #e5e5e5;
+    z-index: 99;
+}
+
+.tab-item {
+    white-space: nowrap;
+    margin: 0 40rpx;
+    height: 100%;
+    line-height: 80rpx;
+}
+
+.on {
+    color: #0D85FF;
+    border-bottom: 4rpx #0D85FF solid;
+    padding-bottom: 4rpx #0D85FF;
+}
+
+swiper {
+    background-color: coral;
+    height: 100%;
+    width: 100%;
+    margin-top: 164rpx;
+}

@@ -1,0 +1,71 @@
+.navBar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  white-space: nowrap;
+  height: 84rpx;
+  width: 100%;
+  color: #868f9b;
+  background-color: #fff;
+  box-shadow: 0 2rpx 4rpx 2rpx #e5e5e5;
+  font-size: 32rpx;
+  z-index: 99;
+}
+
+.firstCategory {
+  line-height: 80rpx;
+}
+
+.on {
+  color: #0D85FF;
+  border-bottom: 6rpx #0D85FF solid;
+}
+
+.swiper-box {
+  position: fixed;
+  bottom: 0;
+  background-color: #eef2f5;
+  height: calc(100vh - 84rpx);
+  width: 100%;
+}
+
+.feed {
+  height: 100%;
+  width: 100%;
+}
+
+.subNavBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 750rpx;
+  height: 80rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #ececec;
+  z-index: 99;
+}
+
+.secondCategory {
+  display: inline-block;
+  background-color: #eef2f5;
+  color: #a8b2bc;
+  font-size: 30rpx;
+  line-height: 56rpx;
+  margin: 12rpx;
+  padding: 0 30rpx;
+  border-radius: 30rpx;
+}
+
+.selected {
+  color: #fff;
+  background-color: #0D85FF;
+}
+
+.scroll {
+  height: calc(100% - 80rpx);
+}
+
+#recommend {
+  height: 100%;
+}

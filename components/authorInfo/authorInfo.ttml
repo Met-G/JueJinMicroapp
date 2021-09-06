@@ -1,0 +1,7 @@
+<view class="authorInfo">
+  <image src="{{avatarImage}}" />
+  <view class="containor">
+    <view class="name">{{userName}}</view>
+    <view class="intro">{{jobTitle}} @ {{company}}</view>
+  </view>
+</view>

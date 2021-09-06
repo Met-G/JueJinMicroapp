@@ -1,0 +1,40 @@
+<view class="topBar">
+<navigator open-type="navigateBack">
+  <image src="/img/arrow_left.png" />
+  </navigator>
+  <view class="searchBar">
+    <icon class="search" type="search" color="#929292" size="16"></icon>
+    <input  placeholder="搜索{{title[currentTab]}}" />
+  </view>
+  <view id="sou">搜索</view>
+</view>
+
+<view class="swiperTab">
+  <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="switchTab" hover-class="hover-class">综合</view>
+  <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="switchTab" hover-class="hover-class">文章</view>
+  <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="switchTab" hover-class="hover-class">小册</view>
+  <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="switchTab" hover-class="hover-class">标签</view>
+  <view class="tab-item {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="switchTab" hover-class="hover-class">用户</view>
+</view>
+
+
+<swiper class="swiper-box" current="{{currentTab}}" bindchange="swiperChange">
+  <swiper-item>
+    <text>综合</text>
+  </swiper-item>
+  <swiper-item>
+    <text>文章</text>
+  </swiper-item>
+  <swiper-item>
+    <text>小册</text>
+  </swiper-item>
+  <swiper-item>
+    <text>标签</text>
+  </swiper-item>
+  <swiper-item>
+    <text>用户</text>
+  </swiper-item>
+  <swiper-item>
+    <text>前端</text>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,94 @@
+<view class="card profile" bindtap="toLogin">
+  <view class="info">
+    <image class="photo" src="/img/login.png"></image>
+    <view class="text">
+      <view class="name">
+        登录/注册
+      </view>
+    </view>
+  </view>
+  <view class="more">
+    <image src="/img/arrow_right.png"></image>
+  </view>
+</view>
+
+<view class="card items">
+  <view class="item" hover-class="hover-class">
+    <view class="title">
+      <image src="/img/message.png"></image>
+      <view>消息中心</view>
+    </view>
+  </view>
+  <view class="item" hover-class="hover-class">
+    <view class="title">
+      <image src="/img/writer.png"></image>
+      <view>创作者中心</view>
+    </view>
+  </view>
+  <view class="item" hover-class="hover-class" bindtap="toLottery">
+    <view class="title">
+      <image src="/img/sign.png"></image>
+      <view>签到赢好礼</view>
+    </view>
+  </view>
+  <view class="item" hover-class="hover-class">
+    <view class="title">
+      <image src="/img/liked_green.png"></image>
+      <view>我赞过的</view>
+    </view>
+    <view class="count">0篇</view>
+  </view>
+  <view class="item" hover-class="hover-class">
+    <view class="title">
+      <image src="/img/collection.png"></image>
+      <view>收藏集</view>
+    </view>
+    <view class="count">0个</view>
+  </view>
+  <view class="item" hover-class="hover-class">
+    <view class="title">
+      <image src="/img/purchased.png"></image>
+      <view>已购</view>
+    </view>
+    <view class="count"> 0本</view>
+  </view>
+</view>
+
+<view class="card items">
+  <view class="item" hover-class="hover-class">
+    <view class="title">
+      <image src="/img/viewed.png"></image>
+      <view>阅读过的文章</view>
+    </view>
+    <view class="count">0篇</view>
+  </view>
+  <view class="item" hover-class="hover-class">
+    <view class="title">
+      <image src="/img/tag.png"></image>
+      <view>标签管理</view>
+    </view>
+    <view class="count"> 0个</view>
+  </view>
+</view>
+
+<view class="card items">
+  <view class="item" hover-class="hover-class" data-open="true">
+    <view class="title">
+      <image src="/img/feedback.png"></image>
+      <view>意见反馈</view>
+    </view>
+  </view>
+  <view class="item" hover-class="hover-class" data-open="true">
+    <view class="title">
+      <image src="/img/dark.png"></image>
+      <view>深色模式</view>
+    </view>
+    <view class="count"> 已关闭<image src="/img/arrow_right.png"></image> </view>
+  </view>
+  <view class="item" hover-class="hover-class" data-open="true">
+    <view class="title">
+      <image src="/img/setting.png"></image>
+      <view>设置</view>
+    </view>
+  </view>
+</view>

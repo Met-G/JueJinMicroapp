@@ -1,0 +1,40 @@
+page{
+    background-color: #fff;
+}
+
+.count{
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    margin: 30rpx;
+    color: #868f9b;
+}
+
+.split {
+    width: 2rpx;
+    height: 24rpx;
+    margin: 0 32rpx;
+    background-color: #e5e6eb;
+}
+
+.footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    width: 750rpx;
+    height: 90rpx;
+    background-color: #fff;
+    border-top: 2rpx solid #ececec
+}
+
+.footer input {
+    background-color: #eee;
+    box-sizing: border-box;
+    width: 690rpx;
+    height: 60rpx;
+    padding-left: 48rpx;
+    margin: 15rpx 30rpx ;
+    border-radius: 32rpx;
+    font-size: 30rpx;
+}

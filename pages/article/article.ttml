@@ -1,0 +1,37 @@
+<scroll-view class="scroll" scroll-y="true" scroll-with-animation="true" scroll-into-view="{{location}}" bindscroll="clearLocation">
+  <view class="article">
+    <!-- 作者信息 -->
+    <view class="subscribe">
+      <view class="plus">+</view>
+      关注
+    </view>
+    <authorInfo id="author" class="author" avatarImage="{{userInfo.avatar_large}}" userName="{{userInfo.user_name}}" jobTitle="{{userInfo.job_title}}" company="{{userInfo.company}}"></authorInfo>
+    <!-- 文章内容 -->
+    <view class="title">{{articleInfo.title}}</view>
+    <image src="{{articleInfo.cover_image}}" class="cover" mode="widthFix" />
+    <rich-text nodes="{{articleContent}}"></rich-text>
+    <!-- 文章信息 -->
+    <view class="tagArea">
+      <view class="tag">{{categoryInfo.first_category_name}}</view>
+      <view class="tag">{{categoryInfo.second_category_name}}</view>
+    </view>
+    <view class="count">赞 {{articleInfo.digg_count}} · 阅读 {{articleInfo.view_count}}</view>
+  </view>
+  <!-- 评论区 -->
+  <view class="comments">
+    <span class="allComments" id="comments">全部评论 {{comments.length}}</span>
+    <comment tt:for="{{comments}}" avatarImage="{{comment.user_info.avatar_large}}" userName="{{comment.user_info.user_name}}" jobTitle="{{comment.user_info.job_title}}" company="{{comment.user_info.company}}" timeAgo="{{comment.comment_info.time_ago}}" content="{{comment.comment_info.comment_content}}" diggCount="{{comment.comment_info.digg_count}}" reply="{{comment.reply_infos}}" isReply="true" bindtap="toCommentsPage" tt:for-index="id" tt:for-item="comment" data-id="{{id}}"></comment>
+  </view>
+</scroll-view>
+<!-- 页脚 -->
+<view class="footer">
+  <input type="text" placeholder="输入评论..." adjust-position />
+  <image src="/img/liked.png" mode="aspectFit" class="icon" />
+  <span>{{articleInfo.digg_count}}</span>
+  <image src="/img/comment.png" mode="aspectFit" class="icon" bindtap="toComments" />
+  <span bindtap="toComments">{{articleInfo.comment_count}} </span>
+</view>
+<!-- 返回顶部 -->
+<view class="toTop" bindtap="toAuthor" hover-class="hover-class">
+  <image src="/img/logo_round.png" mode="aspectFill" />
+</view>

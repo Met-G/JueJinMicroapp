@@ -1,0 +1,34 @@
+page{
+    margin-top: 80rpx
+}
+
+.topBar {
+    position: fixed;
+    top: 0;
+    height: 80rpx;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2rpx 4rpx 2rpx #e5e5e5;
+    z-index: 1;
+}
+
+.search {
+    margin: 3rpx 12rpx 3rpx 20rpx;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #bac1c7;
+    background-color: #eeeeee;
+    font-size: 12pt;
+    height: 60rpx;
+    margin: 10rpx 24rpx;
+    border-radius: 6rpx;
+}
+
+.banner{
+    width: 750rpx;
+    height: 200rpx;
+}

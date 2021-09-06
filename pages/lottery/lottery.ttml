@@ -1,0 +1,81 @@
+<image class="background" src="/img/background.png" mode="aspectFill" />
+<image class="title" src="/img/lottery_title.png" mode="aspectFit" />
+<view class="description">Switch、乐高积木及掘金周边等你来拿</view>
+
+<view class="main">
+  <view class="header">
+    <view class="current"> 当前矿石数：<span class="value">∞</span> </view>
+    <view class="info">
+      <view class="rule" bindtap="toRule"> <image class="icon" src="/img/question.png" /> 抽奖规则 </view>
+      <view class="gain" bindtap="toGain"> <image class="icon" src="/img/gain.png" /> 我的收获 </view>
+    </view>
+  </view>
+  <view class="lottery">
+    <view class="top-border top-bottom">
+      <view class="dot angle-dot"></view>
+      <view class="dot border-dot"></view>
+      <view class="dot middle-dot"></view>
+      <view class="dot border-dot"></view>
+      <view class="dot angle-dot"></view>
+    </view>
+    <view class="bottom-border top-bottom">
+      <view class="dot angle-dot"></view>
+      <view class="dot border-dot"></view>
+      <view class="dot middle-dot"></view>
+      <view class="dot border-dot"></view>
+      <view class="dot angle-dot"></view>
+    </view>
+    <view class="left-border left-right">
+      <view class="dot"></view>
+      <view class="dot border-dot"></view>
+      <view class="dot middle-dot"></view>
+      <view class="dot border-dot"></view>
+      <view class="dot"></view>
+    </view>
+    <view class="right-border left-right">
+      <view class="dot"></view>
+      <view class="dot border-dot"></view>
+      <view class="dot middle-dot"></view>
+      <view class="dot border-dot"></view>
+      <view class="dot"></view>
+    </view>
+    <view class="container">
+      <view class="item" style="background-color:{{itemColor[0]}}">
+        <image src="{{imageUrl[0]}}" />
+        <text>66矿石</text>
+      </view>
+      <view class="item" style="background-color:{{itemColor[1]}}">
+        <image src="{{imageUrl[1]}}" />
+        <text>随机限量徽章</text>
+      </view>
+      <view class="item" style="background-color:{{itemColor[2]}}">
+        <image src="{{imageUrl[2]}}" />
+        <text>掘金新款T恤</text>
+      </view>
+      <view class="item" style="background-color:{{itemColor[7]}}">
+        <image src="{{imageUrl[7]}}" />
+        <text>Bug</text>
+      </view>
+      <view class="item lottery-item" bindtap="startLottery">
+        <div class="choujiang">抽奖</div>
+        <text>200矿石/次</text>
+      </view>
+      <view class="item" style="background-color:{{itemColor[3]}}">
+        <image src="{{imageUrl[3]}}" />
+        <text>乐高海洋巨轮</text>
+      </view>
+      <view class="item" style="background-color:{{itemColor[6]}}">
+        <image src="{{imageUrl[6]}}" />
+        <text>掘金马克杯</text>
+      </view>
+      <view class="item" style="background-color:{{itemColor[5]}}">
+        <image src="{{imageUrl[5]}}" />
+        <text>Yoyo抱枕</text>
+      </view>
+      <view class="item" style="background-color:{{itemColor[4]}}">
+        <image src="{{imageUrl[4]}}" />
+        <text>Switch</text>
+      </view>
+    </view>
+  </view>
+</view>

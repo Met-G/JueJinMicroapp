@@ -1,0 +1,20 @@
+{
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "newFeature": false,
+        "postcss": false,
+        "mockUpdate": false,
+        "minified": false,
+        "nodeModules": false,
+        "scripts": false,
+        "mockLogin": false
+    },
+    "appid": "tt072a71979812724f01",
+    "projectname": "juejin",
+    "condition": {
+        "miniprogram": {
+            "current": -1
+        }
+    }
+}

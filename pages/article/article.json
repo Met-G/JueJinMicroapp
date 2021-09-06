@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "authorInfo":"/components/authorInfo/authorInfo",
+    "comment":"/components/comment/comment"
+  }
+}

@@ -1,0 +1,40 @@
+<view class="swiperTab">
+  <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="switchTab" hover-class="hover-class">实物奖励</view>
+  <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="switchTab" hover-class="hover-class">我的道具</view>
+</view>
+
+<swiper class="swiper-box" current="{{currentTab}}" bindchange="swiperChange">
+  <swiper-item>
+    <view class="item" tt:for="{{drawList}}" tt:if="{{drawList[index]}}">
+      <image src="{{imageUrl[index]}}" />
+      <view class="info">
+        <view class="name">{{goods[index]}}</view>
+        <view class="time">最近获取时间：{{dateList[index]}}</view>
+      </view>
+      <view class="count">{{goods[index]}}*{{drawList[index]}}</view>
+    </view>
+    <view class="empty" tt:if="{{isEmpty}}">
+      <image src="/img/gain_empty.png" />
+      <view class="text">你还没有抽奖奖励哦，快去抽奖吧</view>
+      <view class="toLottery" bindtap="toLottery">去抽奖</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="gain" tt:if="{{gainList[7]}}">
+      <view class="item">
+        <image src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0a4ce25d48b8405cbf5444b6195928d4~tplv-k3u1fbpfcp-no-mark:0:0:0:0.awebp" />
+        <view class="info">
+          <view class="name">Bug</view>
+          <view class="time">最近获取时间：{{dateList[6]}}</view>
+        </view>
+        <view class="count">{{gainList[7]}}个Bug</view>
+      </view>
+      <view class="noMore">没有更多了~</view>
+    </view>
+    <view class="empty" tt:else>
+      <image src="/img/gain_empty.png" mode="aspectFit" />
+      <view class="text">你还没有抽奖奖励哦，快去抽奖吧</view>
+      <view class="toLottery" bindtap="toLottery">去抽奖</view>
+    </view>
+  </swiper-item>
+</swiper>

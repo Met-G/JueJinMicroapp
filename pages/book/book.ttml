@@ -1,0 +1,11 @@
+<view class="swiperTab">
+  <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="switchTab" hover-class="hover-class">全部</view>
+  <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="switchTab" hover-class="hover-class">已购</view>
+</view>
+
+<swiper class="swiper-box" current="{{currentTab}}" bindchange="swiperChange">
+  <swiper-item>
+  </swiper-item>
+  <swiper-item>
+  </swiper-item>
+</swiper>
