@@ -82,9 +82,9 @@ Page({
         current = i
       }
     }
-    this.stopLuck(num, index, 3, 1)
+    this.slowDown(num, index, 3, 1)
   },
-  stopLuck(num, index, time, splittime) {
+  slowDown(num, index, time, splittime) {
     var that = this
     setTimeout(() => {
       if (index > 7) {
@@ -104,7 +104,7 @@ Page({
         if (time > 60) splittime++
         time += splittime
         index++
-        that.stopLuck(num, index, time, splittime)
+        that.slowDown(num, index, time, splittime)
       } else {
         index = 0
         let date = new Date()
