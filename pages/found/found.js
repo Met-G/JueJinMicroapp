@@ -1,5 +1,7 @@
 const { getArticles } = require('../../fake-api/index.js')
 let time = require('../../time.js')
+let offset = 10
+let articleList = []
 
 Page({
   data: {
@@ -18,18 +20,34 @@ Page({
       url: '../lottery/lottery'
     });
   },
-  
+
   onLoad: function (options) {
     getArticles().then(res => {
-      // 获取创建时间
       res.data.articles.forEach(article => {
         let ctime = Number(article.article_info.ctime)
         let atime = time.timeAgo(time.timeTrans(ctime))
         article.article_info.time_ago = atime
-        this.setData({
-          articles: res.data.articles
-        })
+      })
+      articleList = res.data.articles
+      this.setData({
+        articles: res.data.articles
       })
     })
+  },
+
+  onReachBottom() {
+    getArticles(0, 'hot', offset, 10).then(res => {
+      res.data.articles.forEach(article => {
+        let ctime = Number(article.article_info.ctime)
+        let atime = time.timeAgo(time.timeTrans(ctime))
+        article.article_info.time_ago = atime
+      })
+      articleList.push.apply(articleList, res.data.articles)
+      this.setData({
+        articles: articleList
+      })
+      offset += 10
+    })
   }
+
 })

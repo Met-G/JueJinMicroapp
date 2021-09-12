@@ -2,6 +2,44 @@ const app = getApp()
 const { getArticles } = require('../../fake-api/index.js')
 const { categories } = require('../../fake-api/data/categories.js')
 let time = require('../../time.js')
+let offset = {
+  0: 10,
+  1: 0,
+  2: 0,
+  3: 0,
+  4: 0,
+  11: 0,
+  12: 0,
+  13: 0,
+  21: 0,
+  22: 0,
+  23: 0,
+  31: 0,
+  32: 0,
+  33: 0,
+  41: 0,
+  42: 0,
+  43: 0
+}
+let articles = {
+  0: [],
+  1: [],
+  2: [],
+  3: [],
+  4: [],
+  11: [],
+  12: [],
+  13: [],
+  21: [],
+  22: [],
+  23: [],
+  31: [],
+  32: [],
+  33: [],
+  41: [],
+  42: [],
+  43: []
+}
 
 Page({
   data: {
@@ -14,6 +52,8 @@ Page({
       'Android',
       'iOS'
     ],
+    isLoading: false,
+    location: '',
     categories
   },
 
@@ -33,19 +73,26 @@ Page({
     that.setData({
       currentTab: e.detail.current
     })
-    getArticles(this.data.currentTab).then(res => {
-      // 获取创建时间
-      res.data.articles.forEach(article => {
-        let ctime = Number(article.article_info.ctime)
-        let atime = time.timeAgo(time.timeTrans(ctime))
-        article.article_info.time_ago = atime
+    if (articles[this.data.currentTab][0]) {
+      this.setData({
+        ['feed[' + this.data.currentTab + ']']: articles[this.data.currentTab]
+      })
+    } else {
+      getArticles(this.data.currentTab, 'hot', 0, 10).then(res => {
+        // 获取创建时间
+        res.data.articles.forEach(article => {
+          let ctime = Number(article.article_info.ctime)
+          let atime = time.timeAgo(time.timeTrans(ctime))
+          article.article_info.time_ago = atime
+        })
+        articles[this.data.currentTab] = res.data.articles
         this.setData({
-          ['feed[' + this.data.currentTab + ']']: res.data.articles
+          ['feed[' + this.data.currentTab + ']']: articles[this.data.currentTab]
         })
       })
-      this.setData({
-        currentCategory: this.data.currentTab
-      })
+    }
+    this.setData({
+      currentCategory: this.data.currentTab
     })
     tt.setNavigationBarTitle({
       title: String(this.data.categories[this.data.currentTab].category_name)
@@ -60,16 +107,52 @@ Page({
         currentCategory: e.target.dataset.secondId
       })
     }
-    console.log(e)
-    getArticles(this.data.currentCategory).then(res => {
+    getArticles(this.data.currentCategory, 'hot', offset[this.data.currentCategory], 10).then(res => {
+      // 获取创建时间
       res.data.articles.forEach(article => {
         let ctime = Number(article.article_info.ctime)
         let atime = time.timeAgo(time.timeTrans(ctime))
         article.article_info.time_ago = atime
-        this.setData({
-          ['feed[' + this.data.currentTab + ']']: res.data.articles
-        })
       })
+      Array.prototype.push.apply(articles[this.data.currentCategory], res.data.articles)
+      this.setData({
+        ['feed[' + this.data.currentTab + ']']: articles[this.data.currentCategory],
+        location: 'firstCard'
+      })
+      offset[this.data.currentCategory] += 10
+    })
+  },
+
+  toArticle(e) {
+    let articleID = this.data.feed[this.data.currentTab][e.target.dataset.id].article_id
+    tt.navigateTo({
+      url: '../article/article?articleID=' + articleID
+    });
+  },
+
+  clearLocation() {
+    this.setData({
+      location: ''
+    })
+  },
+
+  loadmore() {
+    this.setData({
+      isLoading: true,
+    })
+    getArticles(this.data.currentCategory, 'hot', offset[this.data.currentCategory], 10).then(res => {
+      // 获取创建时间
+      res.data.articles.forEach(article => {
+        let ctime = Number(article.article_info.ctime)
+        let atime = time.timeAgo(time.timeTrans(ctime))
+        article.article_info.time_ago = atime
+      })
+      Array.prototype.push.apply(articles[this.data.currentCategory], res.data.articles)
+      console.log(articles[this.data.currentCategory])
+      this.setData({
+        ['feed[' + this.data.currentTab + ']']: articles[this.data.currentCategory]
+      })
+      offset[this.data.currentCategory] += 10
     })
   },
 
@@ -81,31 +164,12 @@ Page({
         let ctime = Number(article.article_info.ctime)
         let atime = time.timeAgo(time.timeTrans(ctime))
         article.article_info.time_ago = atime
-        this.setData({
-          ['feed[' + this.data.currentTab + ']']: res.data.articles
-        })
+      })
+      articles[0] = res.data.articles
+      this.setData({
+        ['feed[' + this.data.currentTab + ']']: res.data.articles
       })
     })
-
-    /*let temp = []
-    getArticles().then(res => {
-      res.data.articles.forEach(article => {
-        temp.push(article.article_info)
-      });
-    })
-    this.setData({
-      article_infos: temp
-    })
-    console.log(this.data)
-    */
-
-  },
-
-  toArticle(e) {
-    let articleID = this.data.feed[this.data.currentTab][e.target.dataset.id].article_id
-    tt.navigateTo({
-      url: '../article/article?articleID=' + articleID
-    });
   }
 
 });

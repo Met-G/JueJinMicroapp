@@ -108,7 +108,7 @@ Page({
       } else {
         index = 0
         let date = new Date()
-        that.data.dateList[num] = date
+        that.data.dateList[num] = date.toLocaleDateString()
         console.log(that.data.dateList)
         let gain = this.gainGoods(num)
         that.data.gainList[num]++
@@ -120,8 +120,8 @@ Page({
           },
         })
         tt.setStorage({
-          key:'date',
-          data:that.data.dateList,
+          key: 'date',
+          data: that.data.dateList,
           fail(res) {
             console.log(`setStorage调用失败`)
           },

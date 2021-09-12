@@ -23,7 +23,7 @@ Page({
     })
   },
 
-  toLottery(e) {
+  toLottery() {
     tt.navigateBack()
   },
 
@@ -49,13 +49,9 @@ Page({
       key: 'date', // 缓存数据的key
       success: (res) => {
         let dateList = res.data.slice(1,8)
-        for (let i = 0; i < 7; i++) {
-          if (dateList[i]) dateList[i] = dateList[i].substring(0, 10)
-        }
         this.setData({
           dateList: dateList
         })
-        console.log(this.data.dateList)
       }
     });
   }
