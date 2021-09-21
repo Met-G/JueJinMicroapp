@@ -55,7 +55,7 @@
 </view>
 
 <view class="card items">
-  <view class="item" hover-class="hover-class">
+  <view class="item" hover-class="hover-class" bindtap="toHistory">
     <view class="title">
       <image src="/img/viewed.png"></image>
       <view>阅读过的文章</view>

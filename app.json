@@ -13,7 +13,8 @@
     "pages/comments/comments",
     "pages/lottery/lottery",
     "pages/gain/gain",
-    "pages/rule/rule"
+    "pages/rule/rule",
+    "pages/history/history"
   ],
   "window":{
     "backgroundTextStyle":"dark",

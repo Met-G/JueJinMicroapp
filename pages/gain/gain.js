@@ -34,7 +34,6 @@ Page({
         let gainList = res.data
         let drawList = gainList.slice(1, 7)
         let isEmpty = true
-        console.log(gainList)
         drawList.forEach(draw => {
           if (draw != 0) isEmpty = false
         })

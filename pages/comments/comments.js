@@ -17,7 +17,6 @@ Page({
         userInfo: res.data.comment.user_info,
         replys: res.data.comment.reply_infos
       })
-      console.log(this.data)
     })
   }
 })

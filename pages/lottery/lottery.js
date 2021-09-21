@@ -109,7 +109,6 @@ Page({
         index = 0
         let date = new Date()
         that.data.dateList[num] = date.toLocaleDateString()
-        console.log(that.data.dateList)
         let gain = this.gainGoods(num)
         that.data.gainList[num]++
         tt.setStorage({

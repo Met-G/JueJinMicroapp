@@ -8,7 +8,7 @@
     <authorInfo id="author" class="author" avatarImage="{{userInfo.avatar_large}}" userName="{{userInfo.user_name}}" jobTitle="{{userInfo.job_title}}" company="{{userInfo.company}}"></authorInfo>
     <!-- 文章内容 -->
     <view class="title">{{articleInfo.title}}</view>
-    <image src="{{articleInfo.cover_image}}" class="cover" mode="widthFix" />
+    <image src="{{articleInfo.cover_image}}" class="cover" mode="widthFix" bindtap="previewImage" />
     <rich-text nodes="{{articleContent}}"></rich-text>
     <!-- 文章信息 -->
     <view class="tagArea">

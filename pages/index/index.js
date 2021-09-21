@@ -40,6 +40,7 @@ let articles = {
   42: [],
   43: []
 }
+let history = []
 
 Page({
   data: {
@@ -84,6 +85,18 @@ Page({
           let ctime = Number(article.article_info.ctime)
           let atime = time.timeAgo(time.timeTrans(ctime))
           article.article_info.time_ago = atime
+          tt.getNetworkType({
+            success(res) {
+              if (res.networkType == 'WiFi') {
+
+              } else {
+                article.article_info.cover_image = 'https://img0.baidu.com/it/u=3080016857,1583514494&fm=11&fmt=auto&gp=0.jpg'
+              }
+            },
+            fail(res) {
+              console.log('call error')
+            }
+          })
         })
         articles[this.data.currentTab] = res.data.articles
         this.setData({
@@ -113,6 +126,18 @@ Page({
         let ctime = Number(article.article_info.ctime)
         let atime = time.timeAgo(time.timeTrans(ctime))
         article.article_info.time_ago = atime
+        tt.getNetworkType({
+          success(res) {
+            if (res.networkType == 'WiFi') {
+
+            } else {
+              article.article_info.cover_image = 'https://img0.baidu.com/it/u=3080016857,1583514494&fm=11&fmt=auto&gp=0.jpg'
+            }
+          },
+          fail(res) {
+            console.log('call error')
+          }
+        })
       })
       Array.prototype.push.apply(articles[this.data.currentCategory], res.data.articles)
       this.setData({
@@ -125,6 +150,14 @@ Page({
 
   toArticle(e) {
     let articleID = this.data.feed[this.data.currentTab][e.target.dataset.id].article_id
+    history.push(articleID)
+    tt.setStorage({
+      key: 'history',
+      data: history,
+      fail(res) {
+        console.log(`setStorage调用失败`)
+      },
+    })
     tt.navigateTo({
       url: '../article/article?articleID=' + articleID
     });
@@ -146,9 +179,20 @@ Page({
         let ctime = Number(article.article_info.ctime)
         let atime = time.timeAgo(time.timeTrans(ctime))
         article.article_info.time_ago = atime
+        tt.getNetworkType({
+          success(res) {
+            if (res.networkType == 'WiFi') {
+
+            } else {
+              article.article_info.cover_image = 'https://img0.baidu.com/it/u=3080016857,1583514494&fm=11&fmt=auto&gp=0.jpg'
+            }
+          },
+          fail(res) {
+            console.log('call error')
+          }
+        })
       })
       Array.prototype.push.apply(articles[this.data.currentCategory], res.data.articles)
-      console.log(articles[this.data.currentCategory])
       this.setData({
         ['feed[' + this.data.currentTab + ']']: articles[this.data.currentCategory]
       })
@@ -159,11 +203,22 @@ Page({
   onLoad() {
     //获取文章数据
     getArticles().then(res => {
-      // 获取创建时间
       res.data.articles.forEach(article => {
         let ctime = Number(article.article_info.ctime)
         let atime = time.timeAgo(time.timeTrans(ctime))
         article.article_info.time_ago = atime
+        tt.getNetworkType({
+          success(res) {
+            if (res.networkType == 'WiFi') {
+
+            } else {
+              article.article_info.cover_image = 'https://img0.baidu.com/it/u=3080016857,1583514494&fm=11&fmt=auto&gp=0.jpg'
+            }
+          },
+          fail(res) {
+            console.log('call error')
+          }
+        })
       })
       articles[0] = res.data.articles
       this.setData({
@@ -171,5 +226,4 @@ Page({
       })
     })
   }
-
 });

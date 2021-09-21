@@ -13,7 +13,6 @@ Page({
         currentTab: e.target.dataset.current,
       })
     }
-    console.log(this.data.currentTab)
   },
 
   swiperChange(e) {
@@ -21,7 +20,6 @@ Page({
     that.setData({
       currentTab: e.detail.current,
     })
-    console.log(this.data.currentTab)
   },
 
   onLoad: function (options) {

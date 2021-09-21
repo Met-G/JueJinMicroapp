@@ -15,6 +15,12 @@ Page({
     });
   },
 
+  toHistory(e) {
+    tt.navigateTo({
+      url: '../history/history'
+    });
+  },
+
   onLoad: function (options) {
 
   },

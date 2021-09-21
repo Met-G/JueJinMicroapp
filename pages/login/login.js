@@ -7,7 +7,6 @@ Page({
 
   },
   login(res) {
-    console.log('dianla')
     tt.login({
       force: true,
       url:'https://developer.toutiao.com/api/apps/token',

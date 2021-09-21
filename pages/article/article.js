@@ -32,7 +32,14 @@ Page({
       url: '../comments/comments?commentID=' + commentID
     });
   },
-
+  previewImage(e) {
+    tt.previewImage({
+      urls: [this.data.articleInfo.cover_image], // 图片地址列表
+      success: (res) => {
+        console.log(`previewImage调用成功`);
+      }
+    });
+  },
   onLoad(options) {
     // 通过ID获取文章
     getArticleById(options.articleID).then(res => {
@@ -49,7 +56,6 @@ Page({
         },
       })
     })
-
     // 获取评论数据
     getCommentsByArticleId(options.articleId, 0, 20).then(res => {
       // 获取创建时间
@@ -62,13 +68,17 @@ Page({
         })
       })
     })
-    tt.request({
-      url: 'https://juejin.cn/get/book/6897616008173846543', // 目标服务器url
-      success: (res) => {
-        this.setData({
-          // htmlSnip: res.data
-        })
-      }
-    })
+  },
+  onShareAppMessage(res) {
+    return {
+      title: this.data.articleInfo.title,
+      imageUrl: "/img/logo_round.png",
+      success() {
+        console.log("分享成功");
+      },
+      fail(e) {
+        console.log("分享失败", e);
+      },
+    };
   }
 })
