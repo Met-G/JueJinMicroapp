@@ -60,7 +60,7 @@
       <image src="/img/viewed.png"></image>
       <view>阅读过的文章</view>
     </view>
-    <view class="count">0篇</view>
+    <view class="count">{{historyNum}}篇</view>
   </view>
   <view class="item" hover-class="hover-class">
     <view class="title">

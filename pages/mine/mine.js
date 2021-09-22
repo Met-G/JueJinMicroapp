@@ -22,7 +22,22 @@ Page({
   },
 
   onLoad: function (options) {
-
   },
+  
+  onShow() {
+    let history = tt.getStorageSync('history');
+    history = Array.from(new Set(history));
+    tt.setStorage({
+      key: 'history',
+      data: history,
+      fail(res) {
+        console.log(`setStorage调用失败`)
+      },
+    })
+    let historyNum = history.length;
+    this.setData({
+      historyNum: historyNum
+    })
+  }
 
 })
